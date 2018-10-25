@@ -1,5 +1,5 @@
 /*
- *                           UNIVERSIDAD TECNICA DEL NORTE
+ *                          UNIVERSIDAD TECNICA DEL NORTE
                                     FICA-CIERCOM 
                                SISTEMAS MICROPROCESADOS
  NOMBRE: ALEXANDER ICHAU                              
