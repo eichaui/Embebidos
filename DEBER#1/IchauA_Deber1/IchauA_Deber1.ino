@@ -84,6 +84,10 @@ void loop() {
   digitalWrite(juego_3[random(6)],HIGH);  
   delay(300);  
   } i=0;  
+  for(;i<6;i++){
+  digitalWrite(juego_3[random(6)],LOW);  
+  delay(300);  
+  } i=0; 
 }
 
     
