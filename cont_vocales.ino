@@ -26,7 +26,7 @@ void loop() {
      Serial.println(" ");//ingresar datos
      delay(300); 
      Serial.println("el numero de vocales es");//mensaje
-    // Serial.println(con_A);//imprime las letras mayu
+    Serial.println(con_A);//imprime las letras mayu
      Serial.print(con_A++);
      }
   
@@ -35,8 +35,8 @@ void loop() {
      Serial.println(" ");//ingresar datos
      delay(300); 
      Serial.println("el numero de vocales es");//mensaje
-    // Serial.println(con_a);//imprime letras minusculas
-     Serial.print(con_a++);
+    Serial.println(con_a);//imprime letras minusculas
+     Serial.println(con_a++);
      }    
      
    
