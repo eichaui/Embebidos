@@ -4,11 +4,13 @@
                                SISTEMAS MICROPROCESADOS
  NOMBRE: ALEXANDER ICHAU                              
 
-
+                                DEBER 1 
+                                PUERTOS SALIDA 
+  
  1.- Realizar un juego de lueces que se prendan secuencialmente los leds impartes (1,3,5). 
 
                   CODIGO
-
+*/
 int juego[6]={8,9,10,11,12,13};  //crear vector con todas las salidas para las luces 
 int i=0; //variable para el ciclo for
 
@@ -33,7 +35,7 @@ void loop() {
     } i=0;
    } 
 
-   */
+   
 
 
 
