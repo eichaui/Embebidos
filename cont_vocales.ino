@@ -21,7 +21,7 @@ void loop() {
   if (Serial.available()) //Obtenga la cantidad de bytes (caracteres) disponibles para leer desde el puerto serie. Se trata de datos que ya han llegado y se han almacenado en el búfer de recepción en serie. available () hereda de la clase de utilidad Stream .
   {
     valor = Serial.read();//variable para leer en serial
-  if(valor=="65") //condicion si valor es igual a 65=A por codigo asccii
+  if(valor=='65' && valor=='69' && valor=='73' && valor=='79' && valor=='85') //condicion si valor es igual a 65=A por codigo asccii
      {con_A++; //habilita conteo mayusculas 
      Serial.println(" ");//ingresar datos
      delay(300); 
@@ -30,7 +30,7 @@ void loop() {
      Serial.print(con_A++);
      }
   
-     if(valor=="97")//condicion si valor es igual a 97=a por codigo ascii
+     if(valor=='97' && valor=='101' && valor=='105' && valor=='111' && valor=='117')//condicion si valor es igual a 97=a por codigo ascii
      {con_a++;//habilita conteo minusculas
      Serial.println(" ");//ingresar datos
      delay(300); 
