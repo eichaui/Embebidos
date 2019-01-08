@@ -14,8 +14,7 @@
 LiquidCrystal lcd(13,12,11,10,9,8,7);
 int h=0, m=0, s=0;
 void setup() {
-  Serial.begin(9600);
-  lcd.begin(16,4);
+   lcd.begin(16,4);
   attachInterrupt(0,hor,LOW);
   attachInterrupt(1,minut,LOW);
    MsTimer2::set(1000,contador);
