@@ -28,9 +28,7 @@ void setup() {
   MsTimer2::start();
   pinMode(7,OUTPUT);
   attachInterrupt(7,pulsador,LOW);
-  Timer1.initialize(1000000);
-  Timer1.attachInterrupt(contador);
-  attachInterrupt(0,hora,FALLING);
+   attachInterrupt(0,hora,FALLING);
   attachInterrupt(1,minuto,FALLING);
  
 
