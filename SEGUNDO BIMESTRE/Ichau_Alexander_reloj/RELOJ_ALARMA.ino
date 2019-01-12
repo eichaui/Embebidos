@@ -102,10 +102,13 @@ void Alarma(){
     while (Serial.available() > 0) {
              
       ah1=Serial.readString();
+      delay(200);
      ah2=leer_hora.toInt();
+      
         }
     while (Serial.available() > 0) {
       am1 =Serial.readString();
+        delay(200);
       am2= leer_minutos.toInt();    
       
   }
