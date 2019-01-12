@@ -1,7 +1,4 @@
-#include <LiquidCrystal.h>
-#include <TimerOne.h>
-#include <MsTimer2.h>
-#include <EEPROM.h>
+
 /*
  *            UNIVERSIDAD TECNICA DEL NORTE
  *                FICA-CIERCOM
@@ -9,18 +6,19 @@
  *    SISTEMA MICROPROCESADOS
  *              RELOJ CON ALARMA
  */
+#include <LiquidCrystal.h>
+#include <MsTimer2.h>
 LiquidCrystal lcd (13,12,11,10,9,8);
-int horas=0; 
-int minutos=0; 
-int segundos=0;
-char ahora1,ahora2,aminuto1,aminuto2;
-char ahora;
+int h=0; 
+int m=0; 
+int s=0;
+String ah1,ah2,am1,am2;//variables reloj y alarma de horas y minutos
+String ah;
 int i=0;
 int leer_minutos;
 int leer_hora;
 int led=7;
 int contador_alarma;
-int alarma;
 void setup() {
   Serial.begin(9600);
   lcd.begin(16,2);
@@ -28,7 +26,6 @@ void setup() {
   MsTimer2::start();
   pinMode(7,OUTPUT);
   attachInterrupt(7,pulsador,LOW);
-   attachInterrupt(0,hora,FALLING);
   attachInterrupt(1,minuto,FALLING);
  
 
@@ -37,20 +34,16 @@ void loop() {
    lcd.clear();
   lcd.setCursor(2, 0);
     lcd.print("            ");
-  lcd.print(ahora2);
+  lcd.print(ah2);
     lcd.setCursor(2, 0);
     lcd.print(":");
-    delay(400);
     lcd.setCursor(3, 0);
-    lcd.print(aminuto2);
-    delay(400);
-    lcd.setCursor(5, 0);
+    lcd.print(am2);
+   lcd.setCursor(5, 0);
     lcd.print(":");
-    delay(400);
-    lcd.setCursor(8, 0);
+     lcd.setCursor(8, 0);
     lcd.print("  ALARMA");
-    delay(400);
-    lcd.setCursor(0,0);
+      lcd.setCursor(0,0);
   }
 
 void contador(){
@@ -60,31 +53,31 @@ void contador(){
   lcd.print(":");
   lcd.setCursor(9,1);
   lcd.print(":");
-  if(horas<24){
+  if(h<24){
     lcd.setCursor(4,1);
-    if(horas<10)
+    if(h<10)
       lcd.print("0");
-   lcd.print(horas);
+   lcd.print(h);
   }else{
-    horas=0;
+    h=0;
   }
-  if(minutos<60){
+  if(m<60){
     lcd.setCursor(7,1);
-    if(minutos<10)
+    if(m<10)
       lcd.print("0");
-    lcd.print(minutos);
+    lcd.print(m);
   }else{
-    horas++;
-    minutos=0;
+    h++;
+    m=0;
   }
-  if(segundos<60){
+  if(s<60){
     lcd.setCursor(10,1);
-    if(segundos<10)
+    if(s<10)
       lcd.print("0");
-    lcd.print(segundos);
+    lcd.print(s);
   }else{
-    minutos++;
-    segundos=0;
+    m++;
+    s=0;
   }
   delay(80);
   Alarma();
@@ -92,14 +85,14 @@ void contador(){
 
 void hora(){
   delay(30);
-  if(horas<24)
-    horas++;
+  if(h<24)
+    h++;
    }
 
 void minuto(){
   delay(30);
-  if(minutos<60){
-    minutos++;
+  if(m<60){
+    m++;
    
   }
 }
@@ -108,12 +101,12 @@ void Alarma(){
   if (Serial.available() > 0) {
     while (Serial.available() > 0) {
              
-      ahora1= Serial.read(); //leer palabras
-     ahora2=leer_hora;
+      ah1=Serial.readString();
+     ah2=leer_hora.toInt();
         }
     while (Serial.available() > 0) {
-      aminuto1 = Serial.read(); //leer palabras
-      aminuto2= leer_minutos;    
+      am1 =Serial.readString();
+      am2= leer_minutos.toInt();    
       
   }
   }
@@ -121,19 +114,24 @@ void Alarma(){
     
    
     
-      if(segundos == 0 && ahora1 == ahora2 && aminuto1 ==aminuto2){
+      if(s == 0 && ah1 == ah2 && am1 ==am2){
         digitalWrite(led, HIGH);
-              
+         Serial.println("Alarma on");     
+        lcd.print("alarma on");
+      }else{
+        digitalWrite(led, HIGH);
+         Serial.println("Alarma off");     
         lcd.print("alarma on");
       }
       
-    }else{
+    }
       
     }
 
     if(contador_alarma==60){
       digitalWrite(led, LOW);
       contador_alarma=0;
+    }
     }
   
   
