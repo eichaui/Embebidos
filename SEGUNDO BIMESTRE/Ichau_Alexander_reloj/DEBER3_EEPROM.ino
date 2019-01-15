@@ -9,7 +9,8 @@
  #include <EEPROM.h>
  String v;//variable de dato a ingresar
  int p;//variable posicion de la memoria 
- int dato;//valor guardado en la memoria
+ int d;//valor guardado en la memoria
+ 
 void setup() {
  Serial.begin(9600);  
   EEPROM.write(0, 0);
@@ -26,8 +27,8 @@ void memoria(){
     delay(200); 
     v = Serial.readString();  //lee el valor ingresado String
     p= v.toInt();          //conversion String a int 
-     dato=EEPROM.read(0);   
-     if (dato < p) { 
+     d=EEPROM.read(0);   
+     if (d < p) { 
       EEPROM.update(0, p); //actualiza los valores de la memoria 
       Serial.println("El valor es: ");  
       Serial.println(EEPROM.read(0)); // imprime valor guardado en la memoria 
