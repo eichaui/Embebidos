@@ -18,7 +18,10 @@ void setup() {
 }
 
 void loop() {
-  memoria();
+  if (d<255)//valor de la memoria
+  memoria();//llamar al metodo
+  else
+  Serial.println("No puede ingresar memoria llena");//imprime dato
 
 }
 void memoria(){
