@@ -34,59 +34,60 @@ void loop() {
   Serial.println("El valor del CAD es:");
   delay(600);
   Serial.println(conv);
+             
+
+      
+}
+void conteo(){
+
   if(conv==10){
-  lcd.setCursor(4,0);
+    contador++;
+lcd.setCursor(4,0);
 lcd.println("Contador :");
-lcd.setCursor(2,1);
-lcd.println(contador);
-    if(contador==6){
-       wdt_enable(WDTO_4S);
-       digitalWrite(led,HIGH);
+lcd.setCursor(5,1);
+lcd.println(contador); 
+    if(contador==10){      
+       wdt_enable(WDTO_15MS);             
+      wdt_reset(); 
             }
     }
 
         if(conv==20){
         contador++;
-        if(contador==16){
-           wdt_enable(WDTO_4S);
-           digitalWrite(led,HIGH);
+lcd.setCursor(4,0);
+lcd.println("Contador :");
+lcd.setCursor(5,1);
+lcd.println(contador);
+        if(contador==20){
+           wdt_enable(WDTO_15MS);           
+     wdt_reset(); 
                 }
         }
 
-                        if(conv==30){
+           if(conv==30){
               contador++;
-              if(contador==26){
-                 wdt_enable(WDTO_4S);
-                 digitalWrite(led,HIGH);
-                      } }
+lcd.setCursor(4,0);
+lcd.println("Contador :");
+lcd.setCursor(5,1);
+lcd.println(contador);
+              if(contador==30){
+                 wdt_enable(WDTO_15MS);
+                 
+      wdt_reset(); 
+                                      } }
 
 
                       
                         if(conv==40){
               contador++;
-              if(contador==32){
-                 wdt_enable(WDTO_8S);
-                 digitalWrite(led,HIGH);
-                      } }
+lcd.setCursor(4,0);
+lcd.println("Contador :");
+lcd.setCursor(5,1);
+lcd.println(contador);
+              if(contador==40){
+                 wdt_enable(WDTO_15MS);                 
+      wdt_reset(); 
              
-
-
-}
-void conteo(){
-  if(conv==10)
-contador++;
-  if(conv==20)
-contador++;
-  if(conv==30)
-contador++;
-  if(conv==40)
-contador++;
-//lcd.setCursor(4,0);
-//lcd.println("Contador :");
-//lcd.setCursor(2,1);
-//lcd.println(contador);
-
+                      }
+                      }
   }
-
-
-
