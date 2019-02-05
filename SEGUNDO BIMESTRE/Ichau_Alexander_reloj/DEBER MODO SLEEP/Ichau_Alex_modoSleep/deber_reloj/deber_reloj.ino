@@ -1,3 +1,9 @@
+/*UNIVERSIDAD TÉCNICA DEL NORTE
+   FICA-CIERCOM
+   ALEXANDER ICHAU
+   
+   Realizar un reloj mediante el uso de timers con el menor coste computacional
+*/
 #include <TimerOne.h>
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(8,9,10,11,12,13); 
@@ -6,17 +12,9 @@ LiquidCrystal lcd(8,9,10,11,12,13);
 #include <avr/sleep.h>
 #include <avr/power.h>
 #include <MsTimer2.h>
-
-/*UNIVERSIDAD TÉCNICA DEL NORTE
-   FICA-CIERCOM
-   ALEXANDER ICHAU
-   
-   Realizar un reloj mediante el uso de timers con el menor coste computacional
-*/
 int Sec = 0;
 int Min = 0;
 int Hor = 0;
-
 void setup() {
   lcd.begin(16, 2);
   Serial.begin(9600);
