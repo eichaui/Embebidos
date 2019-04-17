@@ -1,4 +1,11 @@
 #include "datos.h"//matriz entrenamiento 
+/*
+   UNIVERSIDAD TECNICA DEL NORTE 
+   FIC-CIERCOM 
+   ALEXANDER ICHAU 
+   KNN
+
+*/
 int col;
 int fila=0;
 float promedio=0;//determinar la distancia entre dos puntos 
