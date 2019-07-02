@@ -1,0 +1,90 @@
+/*
+          UNIVERSIDAD TECNICA DEL NORTE 
+          FICA-CIERCOM 
+      ALEXANDER ICHAU 
+      03/07/2019
+      
+      Grafico dinosaurio de google
+
+*/
+
+ void setup(){
+        size(400,400);
+        background(0);
+        }
+        void draw(){
+         beginShape();
+         fill(255,255,255);
+         vertex(120,20); 
+         vertex(180,20);
+         vertex(180,30); 
+         vertex(190,30); 
+         vertex(190,70); 
+         vertex(140,70); 
+         vertex(140,80); 
+         vertex(170,80); 
+         vertex(170,90);
+         vertex(130,90); 
+         vertex(130,110); 
+         vertex(150,110);
+         vertex(150,130);
+         vertex(140,130);
+         vertex(140,120);
+         vertex(130,120);
+         vertex(120,160);
+         vertex(120,160);
+         vertex(120,175);
+         vertex(110,175);
+         vertex(110,185);
+         vertex(100,185);
+         vertex(100,225);
+         vertex(115,225);
+         vertex(115,230);
+         vertex(95,230);
+         vertex(95,200);
+         vertex(85,200);
+         vertex(85,190);
+         vertex(75,190);
+         vertex(75,200);
+         vertex(65,200);
+         vertex(65,210);
+         vertex(60,210);
+         vertex(60,225);
+         vertex(75,225);
+         vertex(75,230);
+         vertex(55,230);
+         vertex(55,190);
+         vertex(45,190);
+         vertex(45,180);
+         vertex(40,180);
+         vertex(40,170);
+         vertex(35,170);
+         vertex(35,165);
+         vertex(30,165);
+         vertex(30,160);
+         vertex(20,160);
+         vertex(20,105);
+         vertex(25,105);
+         vertex(25,125);
+         vertex(30,125);
+         vertex(30,135);
+         vertex(40,135);
+         vertex(40,145);
+         vertex(60,145);
+         vertex(60,135);
+         vertex(70,135);
+         vertex(70,125);
+         vertex(80,125);
+         vertex(80,115);
+         vertex(90,115);
+         vertex(90,105);
+         vertex(100,105);
+         vertex(100,30);
+         vertex(110,30);
+         vertex(110,20);
+         vertex(120,20);
+       endShape();  
+       noFill();
+       fill(0,0,0);
+       rect(125,45,15,15);
+       }
